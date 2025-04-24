@@ -1,132 +1,194 @@
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #202020;
-    height: 100%;
-  }
-  
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    background-color: #202020;
-    color: white;
-    padding: 10px 20px;
-    gap: 30px;
-  }
-  
-  header input {
-    padding: 6px;
-    width: 300px;
-    border-radius: 5px;
-  }
-  
-  .container {
-    display: flex;
-    margin-top: 60px; /* espai pel header */
-    height: calc(100vh - 50px); /* tota la pantalla menys el header */
-  }
-  
- /*llista lateral*/
-  nav {
-    width: 200px;
-    height: 100vh;
-    background-color: #202020;
-    padding: 20px;
-    margin-top: -9px;
-    margin-left: -3px;
-  }
-  /* ho faig per eliminar els punts dels elements de la llista */
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  
-  nav li {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white; 
-    cursor: pointer;
-    gap: 40px;
-    border-radius: 10px;
-    padding: 10px;
-   
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  overflow-x: hidden;
+}
 
-  nav li:hover {
-    background-color: #333; 
-   
-     }
 
-  .menu-header{
-    width: 35px;
-    height: 35px;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #000000;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px;
+  justify-content: space-between;
+  
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header input {
+  padding: 6px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.notifications {
+  cursor: pointer;
+}
+
+.listener , .user-profile {
+    width: 40px;
+    height: 40px;
     min-width: 40px;
     min-height: 40px;
     border-radius: 360px;
-    display: flex;
+    background-color: #333;
     align-items: center;
     justify-content: center;
-  }   
-
-  .menu-header:hover {  
-    background-color: #333;
-  }
-/* deixem només les imatges quan la pagina és X petita */
-@media (max-width: 768px) {
-    nav {
-        width: 70px;
-        padding: 10px;
-    }
-      
-    .menu-text {
-        display: none;
-    }
-      
-    nav li {
-        justify-content: center;
-        padding: 12px;
-    }
+    display: flex;
+    cursor: pointer;
 }
-/* desapareix el menú lateral, només queda el header i el main quan és mooolt petita */
-@media (max-width: 600px) {
-    nav {
-      display: none;
-    }
-  
-    .container {
-      flex-direction: column;
-    }
-  
-    main {
-      padding: 10px;
-    }
-  }
-  
-  main {
-    flex: 1; /* flex 1, per fer que sigui responsive amb l'espai que queda després de la llista lateral */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    /* definim la quantitat i l'amplada de les columnes, 1fr és una fracció de l'espai disp. ho fa de manera proporcional.*/
-    gap: 20px;
-    padding: 20px;
-    overflow: hidden;
-  }
-  /*no hem funciona això del main, hem col·loca les coses sota del menú lateral*/
 
-  /*.video-card {
-    border: 1px solid white;
-    height: 15px;
-    width: 15px;
-  }*/
+.create-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 360px;
+  width: 96px;
+  height: 35px;
+  padding: 1px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.create-add svg {
+  margin-right: -2px;
+  margin-left: -7px;
+}
+
+.container {
+  display: flex;
+  margin-top: 60px; 
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+
+nav {
+  width: 200px;
+  background-color: #000000;
+  padding: 20px;
+  color: white;
+  overflow-y: auto;
   
-  
-  
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  gap: 40px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+nav li:hover {
+  background-color: #333;
+}
+
+.menu-header {
+  width: 35px;
+  height: 35px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-header:hover {
+  background-color: #333;
+}
+
+
+main {
+  flex: 1;
+  background-color: #000000;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+.video-card {
+  height: auto; /*poso auto per que respecti l'aspect-ratio*/
+  aspect-ratio: 3 / 2; /* hem manté una proporció per tal que no és deformi tant quan ajusto la finestra*/
+  width: 100%;
+  cursor: pointer;
+}
+
+.video-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.video-card h4{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: white;
+}
+
+.video-card p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .menu-text {
+    display: none;
+  }
+
+  nav li {
+    justify-content: center;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 10px;
+  }
+}
