@@ -34,6 +34,15 @@ header {
   gap: 20px;
 }
 
+.header-right {
+  flex-shrink: 0; /* flex-shrink defineix quan pot reduirse un element flex quan no hi ha espai suficient al contenidor, posant 0 evita que es contraigui*/
+}
+.header-mid{
+  flex: 1;
+  min-width: 0;
+  flex-shrink: 1;/* posant 1 l'element es reduiex proporcionalment i fa que es redueixi quan faig petita la pagina*/
+}
+
 header input {
   padding: 14px;
   width: 100%;
@@ -49,13 +58,15 @@ header input {
 .search-container {
   display: flex;
   padding: 0px;
-  width: 600px;
+  width: 100%;
+  max-width: 620px;
   border-radius: 300px;
   height: 40px;
-  border: 0.5px solid #272727;
+  border: 0.5px solid #333333;
   align-items: center;
   overflow: hidden;
   position: relative;
+  flex: 1;
 }
 
 .search-logo {
@@ -66,7 +77,7 @@ header input {
   align-items: center;
   justify-content: center;
   background-color: #272727;
-  border-left: 1px solid #272727;
+  border-left: 1px solid #333333;
   border-top-right-radius: 300px;
   border-bottom-right-radius: 300px;
 }
@@ -78,6 +89,23 @@ header input {
   cursor: pointer;
 }
 
+.search-only-logo , .listener-only-logo {
+  display: none; 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  cursor: pointer;
+  margin-left: -16px;
+  margin-right: -5px
+}
+
+.search-only-logo svg {
+  height: 29px;
+  width: 28px;
+}
 .notifications {
   cursor: pointer;
 }
@@ -100,6 +128,7 @@ header input {
 
 .user-profile {
   background-color: #502ca6;
+  font-size: 20px;
 }
 
 .create-add {
@@ -169,6 +198,7 @@ nav li:hover {
   align-items: center;
   justify-content: center;
   margin-left: 3px;
+  cursor: pointer;
 }
 
 .menu-header:hover {
@@ -180,7 +210,7 @@ main {
   flex: 1;
   background-color: #0f0f0f;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   padding: 20px;
   overflow-y: auto;
@@ -189,7 +219,7 @@ main {
 
 .video-card {
   height: auto; /*poso auto per que respecti l'aspect-ratio*/
-  aspect-ratio: 3 / 2; /* hem manté una proporció per tal que no és deformi tant quan ajusto la finestra*/
+  aspect-ratio: 16/ 9; /* hem manté una proporció per tal que no és deformi tant quan ajusto la finestra*/
   width: 100%;
   cursor: pointer;
 }
@@ -245,5 +275,19 @@ main {
 
   main {
     padding: 10px;
+  }
+
+  .search-container, .listener {
+    display: none;
+  }
+
+  .search-only-logo , .listener-only-logo {
+    display: flex;
+  }
+}
+
+@media (min-width: 1000px) {
+  .search-container {
+    width: 620px;
   }
 }
