@@ -106,11 +106,12 @@ header input {
   height: 29px;
   width: 28px;
 }
-.notifications {
-  cursor: pointer;
+
+.notifications:hover{
+  background-color: #3f3f3f;
 }
 
-.listener , .user-profile {
+.listener , .user-profile, .notifications {
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -126,9 +127,21 @@ header input {
   background-color: #272727;
 }
 
+.listener:hover{
+  background-color: #3f3f3f;
+}
+
 .user-profile {
   background-color: #502ca6;
   font-size: 20px;
+}
+
+.user-profile:hover{
+  background-color: #6d3ddf;
+}
+
+.user-text {
+  font-weight: bold;
 }
 
 .create-add {
@@ -142,6 +155,10 @@ header input {
   padding: 1px;
   font-size: 15px;
   cursor: pointer;
+}
+
+.create-add:hover{
+  background-color: #3f3f3f;
 }
 
 .create-add svg {
@@ -160,7 +177,7 @@ header input {
 nav {
   width: 200px;
   background-color: #0f0f0f;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   color: white;
   overflow-y: auto;
   
@@ -179,13 +196,45 @@ nav li {
   text-align: center;
   color: white;
   cursor: pointer;
-  gap: 40px;
+  gap: 43px;
   border-radius: 10px;
   padding: 10px;
 }
 
+.block1-navlist, .block3-navlist{
+  border-bottom: 0.5px solid #333333;
+  padding-bottom: 10px;
+}
+
+.block2-navlist {
+  padding-top: 10px;
+}
+.menu-text{
+  margin-left: -15px;
+  font-size: 15px;
+  white-space: nowrap;       /* evita que el text salti de linia */
+  overflow: hidden;          /* oculta el text que es desborda */
+  text-overflow: ellipsis;   /* serveix per posar  "..." al final del text quan hi ha desbordament */
+  max-width: 100%;           /* asegura que se limite dentro del contenedor */
+  display: inline-block;    
+}
 nav li:hover {
   background-color: #272727;
+}
+
+.first-svg {
+  display: none; 
+}
+
+.second-svg {
+  display: inline-block; 
+  margin-left: -37px;
+}
+
+.playlist {
+  transform: scale(1.5); /* per ajustar la mida del svg sense alterar el div*/
+  transform-origin: center; /* això determina desde on variarà el que escalis, en aquest cas desdel centre del svg*/
+  margin-left: 4px;
 }
 
 .menu-header {
@@ -197,7 +246,7 @@ nav li:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 3px;
+  margin-left: 5px;
   cursor: pointer;
 }
 
@@ -251,9 +300,14 @@ main {
     padding: 10px;
   }
 
+  .user-text{
+    font-size: 10px;
+  }
+
   .menu-text {
     display: block;
     font-size: 10px;
+    margin-left: 1px;
   }
 
   nav li {
@@ -263,6 +317,7 @@ main {
     flex-direction: column;
     gap: 6px;
   }
+
   main {
     grid-template-columns: repeat(2, 1fr); /*només vull 3 vinyetes de costat quan està a aquesta mida*/
   }
@@ -270,6 +325,14 @@ main {
   .video-card {
     max-width: 100%;
   }
+  .first-svg {
+    display: inline-block;  
+  }
+
+  .second-svg {
+    display: none;  
+  }
+
 }
 
 @media (min-width: 1000px) {
@@ -287,10 +350,6 @@ main {
     flex-direction: column;
   }
 
-  main {
-    padding: 10px;
-  }
-
   .search-container, .listener {
     display: none;
   }
@@ -300,7 +359,9 @@ main {
   }
   main {
     grid-template-columns: repeat(1, 1fr);
+    padding: 10px;
   }
 }
+
 
 
