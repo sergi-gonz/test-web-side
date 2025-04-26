@@ -210,10 +210,10 @@ main {
   flex: 1;
   background-color: #0f0f0f;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: auto; /*l'overflow controla el contingut que es desborda en l'eix vertical, posant auto faig que es pugui fer scroll si cal*/
 }
 
 
@@ -221,6 +221,7 @@ main {
   height: auto; /*poso auto per que respecti l'aspect-ratio*/
   aspect-ratio: 16/ 9; /* hem manté una proporció per tal que no és deformi tant quan ajusto la finestra*/
   width: 100%;
+  max-width: 600px;
   cursor: pointer;
 }
 
@@ -244,7 +245,7 @@ main {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   nav {
     width: 70px;
     padding: 10px;
@@ -261,6 +262,19 @@ main {
     align-items: center;
     flex-direction: column;
     gap: 6px;
+  }
+  main {
+    grid-template-columns: repeat(2, 1fr); /*només vull 3 vinyetes de costat quan està a aquesta mida*/
+  }
+
+  .video-card {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .search-container {
+    width: 620px;
   }
 }
 
@@ -284,10 +298,9 @@ main {
   .search-only-logo , .listener-only-logo {
     display: flex;
   }
-}
-
-@media (min-width: 1000px) {
-  .search-container {
-    width: 620px;
+  main {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
+
+
