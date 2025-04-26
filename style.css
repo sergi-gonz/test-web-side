@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #000000;
+  background-color: #0f0f0f;
   overflow-x: hidden;
 }
 
@@ -13,7 +13,7 @@ header {
   left: 0;
   right: 0;
   height: 60px;
-  background-color: #000000;
+  background-color: #0f0f0f;
   color: white;
   display: flex;
   align-items: center;
@@ -23,16 +23,59 @@ header {
   
 }
 
-.header-left, .header-right {
+.logo-youtube {
+  cursor: pointer;
+}
+
+.header-left, .header-right, .header-mid {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
 header input {
-  padding: 6px;
-  width: 300px;
-  border-radius: 5px;
+  padding: 14px;
+  width: 100%;
+  border-radius: 300px;
+  font-size: 17px;
+  color: #aaaaaa;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  flex: 1; /*flex 1 fa que ocupi tot l'espai disponible dins el div flex */
+}
+
+.search-container {
+  display: flex;
+  padding: 0px;
+  width: 600px;
+  border-radius: 300px;
+  height: 40px;
+  border: 0.5px solid #272727;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.search-logo {
+  height: 100%;
+  width: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #272727;
+  border-left: 1px solid #272727;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+}
+
+.search-logo svg {
+  margin-left: -6px;
+  height: 29px;
+  width: 28px;
+  cursor: pointer;
 }
 
 .notifications {
@@ -45,18 +88,25 @@ header input {
     min-width: 40px;
     min-height: 40px;
     border-radius: 360px;
-    background-color: #333;
     align-items: center;
     justify-content: center;
     display: flex;
     cursor: pointer;
 }
 
+.listener {
+  background-color: #272727;
+}
+
+.user-profile {
+  background-color: #502ca6;
+}
+
 .create-add {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333;
+  background-color: #272727;
   border-radius: 360px;
   width: 96px;
   height: 35px;
@@ -80,7 +130,7 @@ header input {
 
 nav {
   width: 200px;
-  background-color: #000000;
+  background-color: #0f0f0f;
   padding: 20px;
   color: white;
   overflow-y: auto;
@@ -106,7 +156,7 @@ nav li {
 }
 
 nav li:hover {
-  background-color: #333;
+  background-color: #272727;
 }
 
 .menu-header {
@@ -118,16 +168,17 @@ nav li:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 3px;
 }
 
 .menu-header:hover {
-  background-color: #333;
+  background-color: #272727;
 }
 
 
 main {
   flex: 1;
-  background-color: #000000;
+  background-color: #0f0f0f;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
@@ -159,7 +210,7 @@ main {
 .video-card p {
   margin-top: 5px;
   margin-bottom: 5px;
-  color: white;
+  color: #aaaaaa;
 }
 
 
@@ -170,12 +221,16 @@ main {
   }
 
   .menu-text {
-    display: none;
+    display: block;
+    font-size: 10px;
   }
 
   nav li {
     justify-content: center;
-    padding: 12px;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
   }
 }
 
