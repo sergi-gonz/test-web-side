@@ -175,12 +175,11 @@ header input {
 
 
 nav {
-  width: 200px;
+  width: 205px;
   background-color: #0f0f0f;
   padding: 10px 20px 20px 20px;
   color: white;
-  overflow-y: auto;
-  
+  overflow-y: auto; 
 }
 
 nav ul {
@@ -201,14 +200,24 @@ nav li {
   padding: 10px;
 }
 
-.block1-navlist, .block3-navlist{
+.block1-navlist, .block3-navlist, .block4-navlist, .block5-navlist, .block6-navlist, .block7-navlist, .block8-navlist {
   border-bottom: 0.5px solid #333333;
   padding-bottom: 10px;
+  width: 100%;
 }
 
-.block2-navlist {
+.block2-navlist, .bloack7-navlist {
   padding-top: 10px;
 }
+
+.title-navlist {
+  padding-top: 18px;
+  padding-bottom: 10px;
+  margin-left: 9px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
 .menu-text{
   margin-left: -15px;
   font-size: 15px;
@@ -235,6 +244,11 @@ nav li:hover {
   transform: scale(1.5); /* per ajustar la mida del svg sense alterar el div*/
   transform-origin: center; /* això determina desde on variarà el que escalis, en aquest cas desdel centre del svg*/
   margin-left: 4px;
+}
+
+.stream-logo, .flag {
+  transform: scale(1.40);
+  transform-origin: center;
 }
 
 .menu-header {
