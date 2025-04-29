@@ -4,6 +4,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #0f0f0f;
   overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -38,9 +39,33 @@ header {
   flex-shrink: 0; /* flex-shrink defineix quan pot reduirse un element flex quan no hi ha espai suficient al contenidor, posant 0 evita que es contraigui*/
 }
 .header-mid{
-  flex: 1;
   min-width: 0;
   flex-shrink: 1;/* posant 1 l'element es reduiex proporcionalment i fa que es redueixi quan faig petita la pagina*/
+}
+
+.sub-menu {
+  position: fixed; 
+  top: 70px; 
+  left: 292px; 
+  width: calc(100% - 260px); /* amba això faig que ocupi la resta de la pagina */
+  display: flex;
+  gap: 12px;
+  white-space: nowrap; /* Evita salts de línea */
+  overflow-x: hidden;
+}
+
+.categories {
+  background-color: #333333;
+  color: rgb(247, 247, 247);
+  border-radius: 5px;
+  height: 25px;
+  align-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 header input {
@@ -173,9 +198,8 @@ header input {
   overflow: hidden;
 }
 
-
 nav {
-  width: 206px;
+  width: 220px;
   background-color: #0f0f0f;
   padding: 10px 20px 20px 20px;
   color: white;
@@ -197,7 +221,7 @@ nav li {
   cursor: pointer;
   gap: 43px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 8px;
 }
 
 .block1-navlist, .block3-navlist, .block4-navlist, .block5-navlist, .block6-navlist, .block7-navlist {
@@ -218,14 +242,28 @@ nav li {
   font-size: 17px;
 }
 
-.menu-text{
+.menu-text, .menu-text-1 {
   margin-left: -15px;
-  font-size: 15px;
+  font-size: 14px;
   white-space: nowrap;       /* evita que el text salti de linia */
   overflow: hidden;          /* oculta el text que es desborda */
   text-overflow: ellipsis;   /* serveix per posar  "..." al final del text quan hi ha desbordament */
   max-width: 100%;           /* asegura que se limite dentro del contenedor */
   display: inline-block;    
+}
+
+.inicio {
+  background-color: #272727;
+}
+
+.inicio:hover, .categories:hover {
+  background-color: #3f3f3f;
+}
+
+nav {
+  width: 220px;
+  height: 100vh;
+  overflow-y: scroll; /* Asegúrate de que se vea la barra de desplazamiento vertical */
 }
 
 .paragraph1, .paragraph2 {
@@ -309,7 +347,6 @@ nav li:hover {
   background-color: #272727;
 }
 
-
 main {
   flex: 1;
   background-color: #0f0f0f;
@@ -318,6 +355,7 @@ main {
   gap: 20px;
   padding: 20px;
   overflow-y: auto; /*l'overflow controla el contingut que es desborda en l'eix vertical, posant auto faig que es pugui fer scroll si cal*/
+  margin-top: 45px;
 }
 
 
