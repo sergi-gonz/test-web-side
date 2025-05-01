@@ -481,7 +481,7 @@ main {
     font-size: 9px;
     max-width: 100%;
     display: inline-block; 
-    margin-left: -21px;
+    margin-left: -6px;
     overflow: inherit;
   }
 
@@ -516,6 +516,10 @@ main {
   main {
     grid-template-columns: repeat(1, 1fr);
     padding: 10px;
+  }
+  
+  .container-scrollbar {
+    display: none;
   }
 }
 
