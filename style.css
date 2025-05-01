@@ -46,7 +46,7 @@ header {
 .sub-menu {
   position: fixed; 
   top: 70px; 
-  left: 292px; 
+  margin-left: 292px; 
   width: calc(100% - 260px); /* amba això faig que ocupi la resta de la pagina */
   display: flex;
   gap: 12px;
@@ -266,14 +266,14 @@ nav li {
   position: absolute;  /* per moure la barra més tard */
   top: 0;
   opacity: 0;
-  background-color: #3f3f3f;
+  background-color: #717171;
   display: hidden;
-  transition: top 0.2s ease; /* en principi per tocar el desplaçament*/
+  transition: top 0s linear; /* en principi per tocar el desplaçament*/
 }
 
 .scrollbar:hover {
   display: inline;
-  background-color: #747474;
+  background-color: #8c8c8c;
 }
 
 .scrollbar:active {
@@ -320,6 +320,7 @@ nav .paragraph1 {
   font-weight: bold;
   color: rgb(163, 163, 163);
   line-height: 1.5;
+  cursor: pointer;
 }
 
 nav .paragraph2 {
@@ -489,6 +490,14 @@ main {
     padding: 0;
   }
 
+  .sub-menu {
+    margin-left: 115px;
+    width: calc( 100% - 115px);
+  }
+
+  .container-scrollbar {
+    display: none;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -496,6 +505,20 @@ main {
     width: 620px;
   }
 }
+
+@media (max-width: 1000px) {
+  .sub-menu {
+    margin-left: 115px;
+    width: calc(100% - 115px);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  .sub-menu {
+    margin-left: 115px;
+    width: calc(100% - 115px);
+  }
+} 
 
 @media (max-width: 600px) {
   nav {
@@ -520,6 +543,11 @@ main {
   
   .container-scrollbar {
     display: none;
+  }
+
+  .sub-menu{
+    margin-left: 14px;
+    width: calc(100% - 14px);
   }
 }
 
