@@ -98,3 +98,14 @@ document.addEventListener('mousemove', function(event) { // mousemove s'activa c
 });                                                       // llavors ho multipliquem per l'altura total desplaçable del nav, el que ens donarà quan s'ha de moure el nav respecte la posició de la barra
 
 
+// Menu header , ocultar el nav inicial quan fem click 
+//toggle el que fà és cambiar de classes en css , les treu o les posa segons li diguis, en aquest cas ho faig a través del clik del ratolí
+document.querySelector(".menu-header").addEventListener("click", function () {
+  const nav = document.querySelector("nav");
+  const scrollbarContainer = document.querySelector(".container-scrollbar");
+  const subMenu = document.querySelector(".sub-menu");
+
+  nav.classList.toggle("reduced-mode");
+  scrollbarContainer.classList.toggle("reduced-mode");
+  subMenu.classList.toggle("reduced-mode");
+});

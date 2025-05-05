@@ -46,12 +46,13 @@ header {
 .sub-menu {
   position: fixed; 
   top: 70px; 
-  margin-left: 292px; 
+  margin-left: 300px; 
   width: calc(100% - 260px); /* amba això faig que ocupi la resta de la pagina */
   display: flex;
   gap: 12px;
   white-space: nowrap; /* Evita salts de línea */
   overflow-x: hidden;
+  cursor: pointer;
 }
 
 .categories, .categories-2 {
@@ -286,7 +287,6 @@ nav:hover + .container-scrollbar .scrollbar,
 }
 
 .menu-text, .menu-text-1 {
-  margin-left: -15px;
   font-size: 14px;
   white-space: nowrap;       /* evita que el text salti de linia */
   overflow: hidden;          /* oculta el text que es desborda */
@@ -377,7 +377,6 @@ nav li:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
   cursor: pointer;
 }
 
@@ -393,7 +392,7 @@ main {
   gap: 20px;
   padding: 20px;
   overflow-y: auto; /*l'overflow controla el contingut que es desborda en l'eix vertical, posant auto faig que es pugui fer scroll si cal*/
-  margin-top: 45px;
+  margin-top: 53px;
 }
 
 
@@ -424,12 +423,81 @@ main {
   color: #aaaaaa;
 }
 
+/* classes per quan fem click al menuheader*/
+/* Estilos para cuando activamos el modo reducido con el botón */
+nav.reduced-mode {
+  width: 70px;
+  padding: 10px;
+  margin-left: -5px;
+}
 
+nav.reduced-mode .user-text,
+nav.reduced-mode .menu-text {
+  font-size: 10px;
+}
+
+nav.reduced-mode .menu-text {
+  display: block;
+  margin-left: 1px;
+}
+
+nav.reduced-mode li {
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+nav.reduced-mode .video-card {
+  max-width: 100%;
+}
+
+nav.reduced-mode .first-svg {
+  display: inline-block;
+}
+
+nav.reduced-mode .second-svg,
+nav.reduced-mode .block3-navlist,
+nav.reduced-mode .block4-navlist,
+nav.reduced-mode .block5-navlist,
+nav.reduced-mode .block6-navlist,
+nav.reduced-mode .block7-navlist,
+nav.reduced-mode .block8-navlist,
+nav.reduced-mode .title-navlist {
+  display: none;
+}
+
+nav.reduced-mode .block1-navlist,
+nav.reduced-mode .block2-navlist {
+  padding: 0;
+  border-bottom: none;
+}
+
+nav.reduced-mode .menu-text-suscriptions {
+  font-size: 9px;
+  max-width: 100%;
+  display: inline-block;
+  margin-left: -6px;
+  overflow: inherit;
+}
+
+.container-scrollbar.reduced-mode {
+  display: none;
+}
+
+.sub-menu.reduced-mode {
+  margin-left: 122px;
+  width: calc(100% - 122px);
+}
+
+
+/*responsive*/
 @media (max-width: 1400px) {
   nav {
     width: 70px;
     padding: 10px;
-    margin-right: -16;
+    margin-left: -5px;
   }
 
   .user-text{
@@ -439,7 +507,7 @@ main {
   .menu-text {
     display: block;
     font-size: 10px;
-    margin-left: 1px;
+    
   }
 
   nav li {
@@ -451,7 +519,7 @@ main {
   }
 
   main {
-    grid-template-columns: repeat(2, 1fr); /*només vull 3 vinyetes de costat quan està a aquesta mida*/
+    grid-template-columns: repeat(2, 1fr); /*només vull 2 vinyetes de costat quan està a aquesta mida*/
   }
 
   .video-card {
@@ -491,8 +559,8 @@ main {
   }
 
   .sub-menu {
-    margin-left: 115px;
-    width: calc( 100% - 115px);
+    margin-left: 122px;
+    width: calc( 100% - 122px);
   }
 
   .container-scrollbar {
@@ -506,17 +574,12 @@ main {
   }
 }
 
-@media (max-width: 1000px) {
-  .sub-menu {
-    margin-left: 115px;
-    width: calc(100% - 115px);
-  }
-}
+
 
 @media (min-width: 600px) and (max-width: 1000px) {
   .sub-menu {
-    margin-left: 115px;
-    width: calc(100% - 115px);
+    margin-left: 122px;
+    width: calc(100% - 122px);
   }
 } 
 
@@ -550,6 +613,4 @@ main {
     width: calc(100% - 14px);
   }
 }
-
-
 
