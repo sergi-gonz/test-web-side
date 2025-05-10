@@ -46,8 +46,8 @@ header {
 .sub-menu {
   position: fixed; 
   top: 70px; 
-  margin-left: 300px; 
-  width: calc(100% - 260px); /* amba això faig que ocupi la resta de la pagina */
+  margin-left: 285px; 
+  width: calc(100% - 285px);  /*amba això faig que ocupi la resta de la pagina */
   display: flex;
   gap: 12px;
   white-space: nowrap; /* Evita salts de línea */
@@ -56,7 +56,7 @@ header {
 }
 
 .categories, .categories-2 {
-  background-color: #333333;
+  background-color: #272727;
   color: rgb(247, 247, 247);
   border-radius: 5px;
   height: 25px;
@@ -152,6 +152,7 @@ header input {
     justify-content: center;
     display: flex;
     cursor: pointer;
+    position: relative;
 }
 
 .listener {
@@ -186,6 +187,7 @@ header input {
   padding: 1px;
   font-size: 15px;
   cursor: pointer;
+  gap:5px;
 }
 
 .create-add:hover{
@@ -258,6 +260,8 @@ nav li {
   overflow-y: auto;
   box-sizing: border-box;
   position: relative;
+  margin-right: -11px;
+  margin-left: -11px;
 }
 
 .scrollbar {
@@ -491,8 +495,67 @@ nav.reduced-mode .menu-text-suscriptions {
   width: calc(100% - 122px);
 }
 
+/* estils per els menu's desplegables al fer click */
+
+#user-menu {
+  width: 300px;
+  height: 694px;
+  z-index: 1000;
+  background-color: #272727;
+  position: absolute;
+  top: 50px;
+  right: 19px;
+  border-radius: 12px;
+}
+
+#user-menu .menu-block1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#user-menu .menu-item {
+  padding: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 14px;
+}
+
+#user-menu .menu-separator {
+  height: 0.5px;
+  background-color: #3f3f3f;
+  margin: -3px 0; 
+}
+
+#user-menu .menu-item:hover {
+  background-color: #3f3f3f;
+}
+
+.svg-left, .svg-right {
+  width: 24px;
+  height: 24px;
+}
+
+.svg-right {
+  margin-left: auto;      
+}
+
+.menu-item-text {
+  flex: 1;
+  text-align: left;
+  padding-left: 12px; 
+  font-size: 14px;
+}
 
 /*responsive*/
+
+@media (min-width: 2560px) {
+
+}
+
+
 @media (max-width: 1400px) {
   nav {
     width: 70px;
@@ -613,4 +676,3 @@ nav.reduced-mode .menu-text-suscriptions {
     width: calc(100% - 14px);
   }
 }
-
