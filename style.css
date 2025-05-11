@@ -499,7 +499,7 @@ nav.reduced-mode .menu-text-suscriptions {
 
 #user-menu {
   width: 300px;
-  height: 694px;
+  height: 799px;
   z-index: 1000;
   background-color: #272727;
   position: absolute;
@@ -507,6 +507,40 @@ nav.reduced-mode .menu-text-suscriptions {
   right: 19px;
   border-radius: 12px;
 }
+
+#user-menu .block-menu {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+#user-menu .block-item {
+  padding: 15px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+}
+
+.block-item-text-container {
+  display: flex;
+  flex-direction: column; 
+  margin-top: 10px;
+
+}
+
+#user-menu .user-profile-block {
+background-color: #502ca6;
+  font-size: 24px;
+  width: 50px;
+  height: 41px;
+  border-radius: 360px;
+  text-align: center;
+  align-content: center;
+  position: relative;
+  margin-left: -2px;
+  top: -10px;
+} 
 
 #user-menu .menu-block1 {
   margin-top: 10px;
@@ -547,6 +581,21 @@ nav.reduced-mode .menu-text-suscriptions {
   text-align: left;
   padding-left: 12px; 
   font-size: 14px;
+}
+.block-item-text {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.block-text {
+  color: #359dff;
+  cursor: pointer;
+  padding-left: 0;
+  margin-left: 5px;
+  font-size: 15px;
 }
 
 /*responsive*/
