@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       {
         svgLeft:`<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M680-280q25 0 42.5-17.5T740-340q0-25-17.5-42.5T680-400q-25 0-42.5 17.5T620-340q0 25 17.5 42.5T680-280Zm0 120q31 0 57-14.5t42-38.5q-22-13-47-20t-52-7q-27 0-52 7t-47 20q16 24 42 38.5t57 14.5ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v227q-19-8-39-14.5t-41-9.5v-147l-240-90-240 90v188q0 47 12.5 94t35 89.5Q310-290 342-254t71 60q11 32 29 61t41 52q-1 0-1.5.5t-1.5.5Zm200 0q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80ZM480-494Z"/></svg>`,
-        text: "Modod Restringido: desactivado",
+        text: "Modo Restringido: desactivado",
         svgRight: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>`
       },
       {
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
         text: "Ayuda"
       },
       {
-        svgLeft: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg>`,
+        svgLeft: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-360q17 0 28.5-11.5T520-400q0-17-11.5-28.5T480-440q-17 0-28.5 11.5T440-400q0 17 11.5 28.5T480-360Zm-40-160h80v-240h-80v240ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg>`,
         text: "Enviar sugerencias"
       }
     ];
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class = "block-item-text"> ${option.text}</span>
       <span class = "menu-item-text block-text"> ${option.text2}</span>
       </div>  
-      `
+      `;
       userBlock.appendChild(menuItem);
     });
 
@@ -352,6 +352,84 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!isClickInsideMenu && !isClickProfile) {
         userMenu.style.display = "none";
       }
+    }
+  });
+});
+
+// Desplegable per Createadd
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const createAdd = document.querySelector(".create-add");
+
+  // Funció per crear el menú, he fet objectes per recorrer i poguer insertar els svg's directe, així controlo més la disposició dels elements
+  function createAddMenu() {
+    const deleteMenu = document.getElementById("add-menu");
+    if (deleteMenu) deleteMenu.remove();
+
+    const addMenu = document.createElement("div");
+    addMenu.id = "add-menu";
+    addMenu.classList.add("add-menu");
+
+    const addOptions = [
+      {
+        svg: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m380-300 280-180-280-180v360ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"/></svg>`,
+        text: "Subir vídeo"
+      }
+    ];
+    const addOptions1 = [
+      {
+        svg: `<svg class = "stream-logo" width="25px" height="25px" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" enable-background="new 0 0 76.00 76.00" xml:space="preserve"><path fill="#ffffff" fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" d="M 38,31.6667C 41.4978,31.6667 44.3333,34.5022 44.3333,38C 44.3333,41.4978 41.4978,44.3333 38,44.3333C 34.5022,44.3333 31.6667,41.4978 31.6667,38C 31.6667,34.5022 34.5022,31.6667 38,31.6667 Z M 26.9167,38C 26.9167,41.0606 28.1572,43.8314 30.1629,45.8371L 26.8041,49.1959C 23.9389,46.3306 22.1667,42.3723 22.1667,38C 22.1667,33.6278 23.9389,29.6694 26.8041,26.8041L 30.1629,30.1629C 28.1572,32.1686 26.9167,34.9394 26.9167,38 Z M 49.0833,38C 49.0833,34.9394 47.8428,32.1686 45.8371,30.1629L 49.1958,26.8042C 52.0611,29.6694 53.8333,33.6278 53.8333,38C 53.8333,42.3723 52.0611,46.3306 49.1958,49.1959L 45.8371,45.8371C 47.8428,43.8314 49.0833,41.0606 49.0833,38 Z M 17.4167,38C 17.4167,43.6839 19.7205,48.8298 23.4454,52.5546L 20.0866,55.9134C 15.5022,51.3289 12.6667,44.9956 12.6667,38C 12.6667,31.0044 15.5022,24.6711 20.0866,20.0866L 23.4454,23.4454C 19.7205,27.1702 17.4167,32.3161 17.4167,38 Z M 58.5833,38C 58.5833,32.3161 56.2795,27.1702 52.5546,23.4454L 55.9134,20.0866C 60.4978,24.6711 63.3333,31.0044 63.3333,38C 63.3333,44.9956 60.4978,51.3289 55.9134,55.9134L 52.5546,52.5546C 56.2795,48.8298 58.5833,43.6839 58.5833,38 Z "/></svg>`,
+        text: "Emitir en directo"
+      }
+    ];
+
+    const addOptions2 = [
+      {
+        svg: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/></svg>`,
+        text: "Crear publicación"
+      }
+    ];
+
+    addOptions.forEach(function (option) {
+      const addItem = document.createElement("div");
+      addItem.classList.add("add-menu-item");
+      addItem.innerHTML = 
+      `<div class = "svg-left">${option.svg}</div>
+       <span class = "menu-item-text">${option.text}</span>
+       `;
+      addMenu.appendChild(addItem);
+    });
+    
+     addOptions1.forEach(function (option) {
+      const addItem = document.createElement("div");
+      addItem.classList.add("add-menu-item");
+      addItem.innerHTML = 
+      `<div class = "svg-left">${option.svg}</div>
+       <span class = "menu-item-text">${option.text}</span>
+       `;
+      addMenu.appendChild(addItem);
+    });
+
+     addOptions2.forEach(function (option) {
+      const addItem = document.createElement("div");
+      addItem.classList.add("add-menu-item");
+      addItem.innerHTML = 
+      `<div class = "svg-left">${option.svg}</div>
+       <span class = "menu-item-text">${option.text}</span>
+      `;
+      addMenu.appendChild(addItem);
+    });
+
+    document.body.appendChild(addMenu);
+  }
+
+  createAdd.addEventListener("click", createAddMenu);
+
+    document.addEventListener("click", function(e) {
+    const addMenu = document.getElementById("add-menu");
+    if (addMenu && !createAdd.contains(e.target) && !addMenu.contains(e.target)) {
+      addMenu.remove();
     }
   });
 });
