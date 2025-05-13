@@ -362,7 +362,6 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   const createAdd = document.querySelector(".create-add");
 
-  // Funció per crear el menú, he fet objectes per recorrer i poguer insertar els svg's directe, així controlo més la disposició dels elements
   function createAddMenu() {
     const deleteMenu = document.getElementById("add-menu");
     if (deleteMenu) deleteMenu.remove();
@@ -432,4 +431,46 @@ document.addEventListener("DOMContentLoaded", function() {
       addMenu.remove();
     }
   });
+});
+
+// Desplegable Notificationss
+
+
+// popup buscar per veu? 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const microIcon = document.querySelector('.listener');
+
+  microIcon.addEventListener('click', function() {
+    createPopup();
+  });
+
+  function createPopup() {
+    const overlay = document.createElement('div');
+    overlay.className = 'popup-overlay active';
+
+    const popUpContainer = document.createElement('div');
+    popUpContainer.className = 'popup-container';
+    popUpContainer.innerHTML = 
+    `
+    <div class = "cross-close"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></div>
+    <span class = "first-text">Haz búsquedas por voz</span>
+    <span class = "second-text">Para hacer búsquedas por voz, ve a la configuración del navegador y permite el acceso al micrófono.</span>
+    <div class = "micro-icon-2"><svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px" fill="#e3e3e3"><path d="M480-400q-50 0-85-35t-35-85v-240q0-50 35-85t85-35q50 0 85 35t35 85v240q0 50-35 85t-85 35Zm0-240Zm-40 520v-123q-104-14-172-93t-68-184h80q0 83 58.5 141.5T480-320q83 0 141.5-58.5T680-520h80q0 105-68 184t-172 93v123h-80Zm40-360q17 0 28.5-11.5T520-520v-240q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760v240q0 17 11.5 28.5T480-480Z"/></svg></div>
+    `;
+  
+    const closeCross = popUpContainer.querySelector('.cross-close');
+    closeCross.addEventListener('click', function(){
+      overlay.remove();
+    });
+
+    overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+        overlay.remove();
+      }
+    });
+
+    overlay.appendChild(popUpContainer);
+    document.body.appendChild(overlay);
+  }
 });
